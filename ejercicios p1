@@ -1,0 +1,371 @@
+import javax.swing.*;
+import java.util.Scanner;
+import java.util.*;
+import java.util.Collections;
+public class entrepa_p1 {
+    public static void main(String[] args) {
+int opcion;
+        Scanner scanner = new Scanner(System.in);
+        int confirmacion;
+        do {
+            opcion=Integer.parseInt(JOptionPane.showInputDialog(null,"Seleccione un ejercicio <=1 && >=33"));
+            if (opcion > 0 && opcion <= 33) {
+                JOptionPane.showMessageDialog(null, "--------------------------- Ejercicio " + opcion + " -------------------------------");
+                switch (opcion) {
+                    case 1:
+                        Set<Integer> conjuntoEnterosA = new HashSet<>(Arrays.asList(1, 2, 3, 4));
+                        Set<Integer> conjuntoEnterosB = new HashSet<>(Arrays.asList(3, 4, 5));
+
+                        Set<Integer> union = new HashSet<>(conjuntoEnterosA);
+                        union.addAll(conjuntoEnterosB);
+
+                        System.out.println("A: " + conjuntoEnterosA);
+                        System.out.println("B: " + conjuntoEnterosB);
+                        System.out.println("A U B: " + union);
+
+                        break;
+                    case 2:
+                        Set<String> conjuntoLetrasX = new HashSet<>(Arrays.asList("a", "b", "c"));
+                        Set<String> conjuntoLetrasY = new HashSet<>(Arrays.asList("b", "c", "d"));
+
+                        Set<String> unionString = new HashSet<>(conjuntoLetrasX);
+                        unionString.addAll(conjuntoLetrasY);
+
+                        System.out.println("X: " + conjuntoLetrasX);
+                        System.out.println("Y: " + conjuntoLetrasY);
+                        System.out.println("X U Y: " + unionString);
+                        break;
+                    case 3:
+                        Set<Integer> conjuntoEnterosA3 = new HashSet<>(Arrays.asList(1, 2, 3, 4));
+                        Set<String> conjuntoLetrasX3 = new HashSet<>(Arrays.asList("a", "b", "c"));
+
+                        System.out.println("A: " + conjuntoEnterosA3);
+                        System.out.println("X: " + conjuntoLetrasX3);
+                        System.out.println("A U X: []\n");
+                        break;
+                    case 4:
+                        Set<Integer> conjuntoEnterosA4 = new HashSet<>(Arrays.asList(1, 2, 3, 4));
+                        Set<Integer> conjuntoEnterosB4 = new HashSet<>(Arrays.asList(3, 4, 5));
+
+                        Set<Integer> interseccion = new HashSet<>(conjuntoEnterosA4);
+                        interseccion.retainAll(conjuntoEnterosB4);
+
+                        System.out.println("A: " + conjuntoEnterosA4);
+                        System.out.println("B: " + conjuntoEnterosB4);
+                        System.out.println("Interseccion: " + interseccion + "\n");
+                        break;
+                    case 5:
+                        Set<String> conjuntoLetrasX5 = new HashSet<>(Arrays.asList("a", "b", "c"));
+                        Set<String> conjuntoLetrasY5 = new HashSet<>(Arrays.asList("b", "c", "d"));
+
+                        Set<String> interseccionString = new HashSet<>(conjuntoLetrasX5);
+                        interseccionString.retainAll(conjuntoLetrasY5);
+
+                        System.out.println("X: " + conjuntoLetrasX5);
+                        System.out.println("Y: " + conjuntoLetrasY5);
+                        System.out.println("Interseccion: " + interseccionString + "\n");
+                        break;
+                    case 6:
+                        Set<Integer> conjuntoEnterosA6 = new HashSet<>(Arrays.asList(1, 2, 3, 4));
+                        Set<String> conjuntoLetrasX6 = new HashSet<>(Arrays.asList("a", "b", "c"));
+
+                        System.out.println("A: " + conjuntoEnterosA6);
+                        System.out.println("X: " + conjuntoLetrasX6);
+                        System.out.println("Interseccion: []\n");
+                        break;
+                    case 7:
+                        Set<Integer> conjuntoEnterosA7 = new HashSet<>(Arrays.asList(1, 2, 3, 4));
+                        Set<Integer> conjuntoEnterosB7 = new HashSet<>(Arrays.asList(3, 4, 5));
+
+                        Set<Integer> diferencia = new HashSet<>(conjuntoEnterosA7);
+                        diferencia.removeAll(conjuntoEnterosB7);
+
+                        System.out.println("A: " + conjuntoEnterosA7);
+                        System.out.println("B: " + conjuntoEnterosB7);
+                        System.out.println("Diferencia (A - B): " + diferencia + "\n");
+                        break;
+                    case 8:
+                        Set<String> conjuntoLetrasX8 = new HashSet<>(Arrays.asList("a", "b", "c"));
+                        Set<String> conjuntoLetrasY8 = new HashSet<>(Arrays.asList("b", "c", "d"));
+
+                        Set<String> diferenciaString = new HashSet<>(conjuntoLetrasX8);
+                        diferenciaString.removeAll(conjuntoLetrasY8);
+
+                        System.out.println("X: " + conjuntoLetrasX8);
+                        System.out.println("Y: " + conjuntoLetrasY8);
+                        System.out.println("Diferencia (X - Y): " + diferenciaString + "\n");
+                        break;
+                    case 9:
+                        Set<Integer> conjuntoEnterosA9 = new HashSet<>(Arrays.asList(1, 2, 3, 4));
+                        Set<Integer> conjuntoEnterosB9 = new HashSet<>(Arrays.asList(3, 4, 5));
+
+                        Set<Integer> diferencia9 = new HashSet<>(conjuntoEnterosB9);
+                        diferencia9.removeAll(conjuntoEnterosA9);
+
+                        System.out.println("A: " + conjuntoEnterosA9);
+                        System.out.println("B: " + conjuntoEnterosB9);
+                        System.out.println("Diferencia (B - A): " + diferencia9 + "\n");
+                        break;
+                    case 10:
+                        Set<String> conjuntoLetrasX10 = new HashSet<>(Arrays.asList("a", "b", "c"));
+                        Set<String> conjuntoLetrasY10 = new HashSet<>(Arrays.asList("b", "c", "d"));
+
+                        Set<String> diferenciaString10 = new HashSet<>(conjuntoLetrasY10);
+                        diferenciaString10.removeAll(conjuntoLetrasX10);
+
+                        System.out.println("X: " + conjuntoLetrasX10);
+                        System.out.println("Y: " + conjuntoLetrasY10);
+                        System.out.println("Diferencia (Y - X): " + diferenciaString10 + "\n");
+                        break;
+                    case 11:
+                        Set<Integer> conjuntoEnterosA11 = new HashSet<>(Arrays.asList(1, 2, 3, 4));
+                        Set<Integer> conjuntoEnterosB11 = new HashSet<>(Arrays.asList(3, 4, 5));
+
+                        boolean esSubconjunto = conjuntoEnterosA11.containsAll(conjuntoEnterosB11);
+
+                        System.out.println("A: " + conjuntoEnterosA11);
+                        System.out.println("B: " + conjuntoEnterosB11);
+                        System.out.println("B es subconjunto de A: " + esSubconjunto + "\n");
+                        break;
+                    case 12:
+                        Set<String> conjuntoLetrasX12 = new HashSet<>(Arrays.asList("a", "b", "c"));
+                        Set<String> conjuntoLetrasY12 = new HashSet<>(Arrays.asList("b", "c", "d"));
+
+                        boolean esSubconjuntoString = conjuntoLetrasX12.containsAll(conjuntoLetrasY12);
+
+                        System.out.println("X: " + conjuntoLetrasX12);
+                        System.out.println("Y: " + conjuntoLetrasY12);
+                        System.out.println("Y es subconjunto de X: " + esSubconjuntoString + "\n");
+                        break;
+                    case 13:
+                        Set<Integer> conjuntoEnterosA13 = new HashSet<>(Arrays.asList(1, 2, 3, 4));
+                        Set<Integer> conjuntoEnterosB13 = new HashSet<>(Arrays.asList(3, 4, 5));
+
+                        boolean esSubconjunto13 = conjuntoEnterosB13.containsAll(conjuntoEnterosA13);
+
+                        System.out.println("A: " + conjuntoEnterosA13);
+                        System.out.println("B: " + conjuntoEnterosB13);
+                        System.out.println("A es subconjunto de B: " + esSubconjunto13 + "\n");
+                        break;
+                    case 14:
+                        Set<String> conjuntoLetrasX14 = new HashSet<>(Arrays.asList("a", "b", "c"));
+                        Set<String> conjuntoLetrasY14 = new HashSet<>(Arrays.asList("b", "c", "d"));
+
+                        boolean esSubconjuntoString14 = conjuntoLetrasY14.containsAll(conjuntoLetrasX14);
+
+                        System.out.println("X: " + conjuntoLetrasX14);
+                        System.out.println("Y: " + conjuntoLetrasY14);
+                        System.out.println("X es subconjunto de Y: " + esSubconjuntoString14 + "\n");
+                        break;
+                    case 15:
+                        Set<Integer> conjuntoEnterosA15 = new HashSet<>(Arrays.asList(1, 2, 3));
+                        Set<Integer> conjuntoEnterosB15 = new HashSet<>(Arrays.asList(1, 2, 3, 4, 5));
+
+                        boolean sonDisjuntos = Collections.disjoint(conjuntoEnterosA15, conjuntoEnterosB15);
+
+                        System.out.println("A: " + conjuntoEnterosA15);
+                        System.out.println("B: " + conjuntoEnterosB15);
+                        System.out.println("A y B son conjuntos disjuntos: " + sonDisjuntos + "\n");
+                        break;
+                    case 16:
+                        Set<String> conjuntoLetrasX16 = new HashSet<>(Arrays.asList("a", "b", "c"));
+                        Set<String> conjuntoLetrasY16 = new HashSet<>(Arrays.asList("d", "e", "f"));
+
+                        boolean sonDisjuntosString = Collections.disjoint(conjuntoLetrasX16, conjuntoLetrasY16);
+
+                        System.out.println("X: " + conjuntoLetrasX16);
+                        System.out.println("Y: " + conjuntoLetrasY16);
+                        System.out.println("X y Y son conjuntos disjuntos: " + sonDisjuntosString + "\n");
+                        break;
+                    case 17:
+                        Set<Integer> conjuntoEnterosA17 = new HashSet<>(Arrays.asList(1, 2, 3));
+                        Set<Integer> conjuntoEnterosB17 = new HashSet<>(Arrays.asList(4, 5, 6));
+
+                        boolean sonDisjuntos17 = Collections.disjoint(conjuntoEnterosA17, conjuntoEnterosB17);
+
+                        System.out.println("A: " + conjuntoEnterosA17);
+                        System.out.println("B: " + conjuntoEnterosB17);
+                        System.out.println("A y B son conjuntos disjuntos: " + sonDisjuntos17 + "\n");
+                        break;
+                    case 18:
+                        Set<String> conjuntoLetrasX18 = new HashSet<>(Arrays.asList("a", "b", "c"));
+                        Set<String> conjuntoLetrasY18 = new HashSet<>(Arrays.asList("a", "b", "c"));
+
+                        boolean sonDisjuntosString18 = Collections.disjoint(conjuntoLetrasX18, conjuntoLetrasY18);
+
+                        System.out.println("X: " + conjuntoLetrasX18);
+                        System.out.println("Y: " + conjuntoLetrasY18);
+                        System.out.println("X y Y son conjuntos disjuntos: " + sonDisjuntosString18 + "\n");
+                        break;
+                    case 19:
+                        Set<Integer> conjuntoEnterosA19 = new HashSet<>(Arrays.asList(1, 2, 3));
+                        Set<Integer> conjuntoEnterosB19 = new HashSet<>(Arrays.asList(1, 2, 3));
+
+                        boolean sonDisjuntos19 = Collections.disjoint(conjuntoEnterosA19, conjuntoEnterosB19);
+
+                        System.out.println("A: " + conjuntoEnterosA19);
+                        System.out.println("B: " + conjuntoEnterosB19);
+                        System.out.println("A y B son conjuntos disjuntos: " + sonDisjuntos19 + "\n");
+                        break;
+                    case 20:
+                        Set<String> conjuntoLetrasX20 = new HashSet<>(Arrays.asList("a", "b", "c"));
+                        Set<String> conjuntoLetrasY20 = new HashSet<>(Arrays.asList("d", "e", "f"));
+
+                        boolean sonDisjuntosString20 = Collections.disjoint(conjuntoLetrasX20, conjuntoLetrasY20);
+
+                        System.out.println("X: " + conjuntoLetrasX20);
+                        System.out.println("Y: " + conjuntoLetrasY20);
+                        System.out.println("X y Y son conjuntos disjuntos: " + sonDisjuntosString20 + "\n");
+                        break;
+                    case 21:
+                        Set<Integer> conjuntoEnterosA21 = new HashSet<>(Arrays.asList(1, 2, 3, 4));
+                        Set<Integer> conjuntoEnterosB21 = new HashSet<>(Arrays.asList(3, 4, 5));
+
+                        Set<Integer> complementoA = new HashSet<>(conjuntoEnterosA21);
+                        complementoA.removeAll(conjuntoEnterosB21);
+
+                        System.out.println("A: " + conjuntoEnterosA21);
+                        System.out.println("B: " + conjuntoEnterosB21);
+                        System.out.println("Complemento de A respecto a B: " + complementoA + "\n");
+                        break;
+                    case 22:
+                        Set<String> conjuntoLetrasX22 = new HashSet<>(Arrays.asList("a", "b", "c"));
+                        Set<String> conjuntoLetrasY22 = new HashSet<>(Arrays.asList("b", "c", "d"));
+
+                        Set<String> complementoX = new HashSet<>(conjuntoLetrasX22);
+                        complementoX.removeAll(conjuntoLetrasY22);
+
+                        System.out.println("X: " + conjuntoLetrasX22);
+                        System.out.println("Y: " + conjuntoLetrasY22);
+                        System.out.println("Complemento de X respecto a Y: " + complementoX + "\n");
+                        break;
+                    case 23:
+                        Set<Integer> conjuntoEnterosA23 = new HashSet<>(Arrays.asList(1, 2, 3, 4));
+                        Set<Integer> conjuntoEnterosB23 = new HashSet<>(Arrays.asList(3, 4, 5));
+
+                        Set<Integer> complementoB = new HashSet<>(conjuntoEnterosB23);
+                        complementoB.removeAll(conjuntoEnterosA23);
+
+                        System.out.println("A: " + conjuntoEnterosA23);
+                        System.out.println("B: " + conjuntoEnterosB23);
+                        System.out.println("Complemento de B respecto a A: " + complementoB + "\n");
+                        break;
+                    case 24:
+                        Set<String> conjuntoLetrasX24 = new HashSet<>(Arrays.asList("a", "b", "c"));
+                        Set<String> conjuntoLetrasY24 = new HashSet<>(Arrays.asList("b", "c", "d"));
+
+                        Set<String> complementoY = new HashSet<>(conjuntoLetrasY24);
+                        complementoY.removeAll(conjuntoLetrasX24);
+
+                        System.out.println("X: " + conjuntoLetrasX24);
+                        System.out.println("Y: " + conjuntoLetrasY24);
+                        System.out.println("Complemento de Y respecto a X: " + complementoY + "\n");
+                        break;
+                    case 25:
+                        Set<Integer> conjuntoEnterosA25 = new HashSet<>(Arrays.asList(1, 2, 3));
+                        Set<Integer> conjuntoEnterosB25 = new HashSet<>(Arrays.asList(1, 2, 3, 4, 5));
+
+
+
+                        System.out.println("A: " + conjuntoEnterosA25);
+                        System.out.println("B: " + conjuntoEnterosB25);
+                        System.out.println("A es subconjunto propio de B: "  + "\n");
+                        break;
+                    case 26:
+                        Set<String> conjuntoLetrasX26 = new HashSet<>(Arrays.asList("a", "b", "c"));
+                        Set<String> conjuntoLetrasY26 = new HashSet<>(Arrays.asList("b", "c", "d"));
+
+
+
+                        System.out.println("X: " + conjuntoLetrasX26);
+                        System.out.println("Y: " + conjuntoLetrasY26);
+                        System.out.println("X es subconjunto propio de Y: " + "\n");
+                        break;
+                    case 27:
+                        Set<Integer> conjuntoEnterosA27 = new HashSet<>(Arrays.asList(1, 2, 3, 4));
+                        Set<Integer> conjuntoEnterosB27 = new HashSet<>(Arrays.asList(3, 4, 5));
+
+
+
+                        System.out.println("A: " + conjuntoEnterosA27);
+                        System.out.println("B: " + conjuntoEnterosB27);
+                        System.out.println("B es subconjunto propio de A: " + "\n");
+                        break;
+                    case 28:
+                        Set<String> conjuntoLetrasX28 = new HashSet<>(Arrays.asList("a", "b", "c"));
+                        Set<String> conjuntoLetrasY28 = new HashSet<>(Arrays.asList("a", "b", "c"));
+
+
+
+                        System.out.println("X: " + conjuntoLetrasX28);
+                        System.out.println("Y: " + conjuntoLetrasY28);
+                        System.out.println("Y es subconjunto propio de X: " +"\n");
+                        break;
+                    case 29:
+                        Set<Integer> conjuntoEnterosA29 = new HashSet<>(Arrays.asList(1, 2, 3));
+                        Set<Integer> conjuntoEnterosB29 = new HashSet<>(Arrays.asList(1, 2, 3));
+
+
+
+                        System.out.println("A: " + conjuntoEnterosA29);
+                        System.out.println("B: " + conjuntoEnterosB29);
+                        System.out.println("A es subconjunto propio de B: " + "\n");
+                        break;
+                    case 30:
+                        Set<String> conjuntoLetrasX30 = new HashSet<>(Arrays.asList("a", "b", "c"));
+                        Set<String> conjuntoLetrasY30 = new HashSet<>(Arrays.asList("d", "e", "f"));
+
+
+
+                        System.out.println("X: " + conjuntoLetrasX30);
+                        System.out.println("Y: " + conjuntoLetrasY30);
+                        System.out.println("X es subconjunto propio de Y: " + "\n");
+                        break;
+                    case 31:
+                        Set<Integer> conjuntoEnterosA31 = new HashSet<>(Arrays.asList(1, 2, 3, 4));
+                        Set<Integer> conjuntoEnterosB31 = new HashSet<>(Arrays.asList(3, 4, 5));
+
+                        Set<Integer> complementoA31 = new HashSet<>(conjuntoEnterosA31);
+                        complementoA31.removeAll(conjuntoEnterosB31);
+
+                        System.out.println("A: " + conjuntoEnterosA31);
+                        System.out.println("B: " + conjuntoEnterosB31);
+                        System.out.println("Complemento de A respecto a B: " + complementoA31 + "\n");
+                        break;
+                    case 32:
+                        Set<String> conjuntoLetrasX32 = new HashSet<>(Arrays.asList("a", "b", "c"));
+                        Set<String> conjuntoLetrasY32 = new HashSet<>(Arrays.asList("b", "c", "d"));
+
+                        Set<String> complementoX32 = new HashSet<>(conjuntoLetrasX32);
+                        complementoX32.removeAll(conjuntoLetrasY32);
+
+                        System.out.println("X: " + conjuntoLetrasX32);
+                        System.out.println("Y: " + conjuntoLetrasY32);
+                        System.out.println("Complemento de X respecto a Y: " + complementoX32 + "\n");
+                        break;
+                    case 33:
+                        Set<Integer> conjuntoEnterosA33 = new HashSet<>(Arrays.asList(1, 2, 3, 4));
+                        Set<Integer> conjuntoEnterosB33 = new HashSet<>(Arrays.asList(3, 4, 5));
+
+                        Set<Integer> complementoB33 = new HashSet<>(conjuntoEnterosB33);
+                        complementoB33.removeAll(conjuntoEnterosA33);
+
+                        System.out.println("A: " + conjuntoEnterosA33);
+                        System.out.println("B: " + conjuntoEnterosB33);
+                        System.out.println("Complemento de B respecto a A: " + complementoB33 + "\n");
+                        break;
+
+                }
+            }
+            else {
+                JOptionPane.showMessageDialog(null,"Ingrese un numero valido");
+            }
+
+            JOptionPane.showMessageDialog(null,"Otro ejercicio:1, Finish:0:");
+            confirmacion = scanner.nextInt();
+
+        } while (confirmacion == 1);
+
+        scanner.close();
+    }
+}
